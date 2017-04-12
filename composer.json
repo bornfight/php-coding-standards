@@ -2,7 +2,7 @@
 	"name": "degordian/php-coding-standards",
 	"description": "Degordian PHP coding stanards",
 	"keywords": ["degordian", "style-guide", "codesniffer"],
-	"homepage": "https.//www.degordian.com/",
+	"homepage": "https://www.degordian.com/",
 	"authors": [
 		{
 			"name": "Marko Kruljac",
