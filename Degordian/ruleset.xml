@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Degordian">
+    <description>Degordian Coding Standard</description>
+
+    <rule ref="Yii2">
+      <exclude name="Yii2.Properties.PrivatePropertiesUnderscore"/>
+    </rule>
+    <rule ref="Squiz.PHP.CommentedOutCode">
+      <properties>
+        <property name="maxPercentage" value="75"/>
+      </properties>
+    </rule>
+    <rule ref="Squiz.PHP.DiscouragedFunctions">
+      <properties>
+        <property name="forbiddenFunctions" type="array" value="error_log=>null,print_r=>null,var_dump=>null,dump=>null,die=>null"/>
+        <propery name="error" value="true"/>
+      </properties>
+    </rule>
+    <rule ref="Squiz.PHP.ForbiddenFunctions">
+      <properties>
+        <property name="forbiddenFunctions" type="array" value="eval=>null,exec=>null,curl_init=>null"/>
+      </properties>
+    </rule>
+    <rule ref="PEAR.Commenting.InlineComment.WrongStyle">
+      <severity>3</severity>
+    </rule>
+
+    <exclude-pattern>*/tests/codeception/*</exclude-pattern>
+</ruleset>
