@@ -12,18 +12,22 @@
     </rule>
     <rule ref="Squiz.PHP.DiscouragedFunctions">
       <properties>
-        <property name="forbiddenFunctions" type="array" value="error_log=>null,print_r=>null,var_dump=>null,dump=>null,die=>null"/>
-        <propery name="error" value="true"/>
+        <property name="forbiddenFunctions" type="array" value="eval=>null,exec=>null"/>
       </properties>
     </rule>
     <rule ref="Squiz.PHP.ForbiddenFunctions">
       <properties>
-        <property name="forbiddenFunctions" type="array" value="eval=>null,exec=>null,curl_init=>null"/>
+        <property name="forbiddenFunctions" type="array" value="curl_init=>null,error_log=>null,print_r=>null,var_dump=>null,dump=>null,die=>null"/>
       </properties>
     </rule>
     <rule ref="PEAR.Commenting.InlineComment.WrongStyle">
       <severity>3</severity>
     </rule>
-
+    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols"> 
+      <exclude-pattern>*/console/*</exclude-pattern>
+      <exclude-pattern>definitions.php</exclude-pattern>
+    </rule>
+    <exclude-pattern>index(-test)?.php</exclude-pattern>
     <exclude-pattern>*/tests/codeception/*</exclude-pattern>
+    <exclude-pattern>*/views/*</exclude-pattern>
 </ruleset>
