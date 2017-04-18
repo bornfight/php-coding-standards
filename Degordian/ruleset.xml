@@ -30,4 +30,5 @@
     <exclude-pattern>index(-test)?.php</exclude-pattern>
     <exclude-pattern>*/tests/codeception/*</exclude-pattern>
     <exclude-pattern>*/views/*</exclude-pattern>
+    <exclude-pattern>*/slice/*</exclude-pattern>
 </ruleset>
