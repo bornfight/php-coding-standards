@@ -1,15 +1,25 @@
 {
-	"name": "degordian/php-coding-standards",
-	"description": "Degordian PHP coding stanards",
-	"keywords": ["degordian", "style-guide", "codesniffer"],
-	"homepage": "https://www.degordian.com/",
-	"authors": [
-		{
-			"name": "Marko Kruljac",
-			"email": "marko.kruljac@degordian.com"
-		}
-	],
-	"require": {
-		"yiisoft/yii2-coding-standards": "*"
-	}
+  "name": "degordian/php-coding-standards",
+  "description": "Degordian PHP coding stanards",
+  "keywords": [
+    "degordian",
+    "style-guide",
+    "codesniffer"
+  ],
+  "homepage": "https://www.degordian.com/",
+  "authors": [
+    {
+      "name": "Marko Kruljac",
+      "email": "marko.kruljac@degordian.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/krukru/yii2-coding-standards"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2-coding-standards": "*"
+  }
 }
