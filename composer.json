@@ -13,6 +13,12 @@
       "email": "marko.kruljac@degordian.com"
     }
   ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/krukru/yii2-coding-standards"
+    }
+  ],
   "require": {
     "krukru/yii2-coding-standards": "dev-phpcs-3.0/refactor"
   }
