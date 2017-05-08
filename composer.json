@@ -20,6 +20,6 @@
     }
   ],
   "require": {
-    "yiisoft/yii2-coding-standards": "*"
+    "yiisoft/yii2-coding-standards": "phpcs-3.0/refactor"
   }
 }
