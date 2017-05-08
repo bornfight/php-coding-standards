@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5d659c009311a6af79b535fd5bcb525",
+    "content-hash": "4bbabb44a5e51db6912178a27e9b6bad",
     "packages": [
         {
             "name": "squizlabs/php_codesniffer",
@@ -59,7 +59,7 @@
         },
         {
             "name": "yiisoft/yii2-coding-standards",
-            "version": "dev-phpcs-3.0/refactor",
+            "version": "v3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krukru/yii2-coding-standards",
@@ -123,15 +123,13 @@
                 "irc": "irc://irc.freenode.net/yii",
                 "source": "https://github.com/yiisoft/yii2"
             },
-            "time": "2017-05-04 12:27:55"
+            "time": "2017-05-04T12:27:55+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "yiisoft/yii2-coding-standards": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
