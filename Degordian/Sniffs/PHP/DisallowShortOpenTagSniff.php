@@ -6,7 +6,7 @@
  *
  */
 
-namespace PHP_Codesniffer\Standards\Degordian\Sniffs\Commenting;
+namespace PHP_Codesniffer\Standards\Degordian\Sniffs\PHP;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
