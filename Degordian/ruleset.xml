@@ -1,34 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset name="Degordian">
-    <description>Degordian Coding Standard</description>
+  <description>Degordian Coding Standard</description>
 
-    <rule ref="Yii2">
-      <exclude name="Yii2.Properties.PrivatePropertiesUnderscore"/>
-    </rule>
-    <rule ref="Squiz.PHP.CommentedOutCode">
-      <properties>
-        <property name="maxPercentage" value="75"/>
-      </properties>
-    </rule>
-    <rule ref="Squiz.PHP.DiscouragedFunctions">
-      <properties>
-        <property name="forbiddenFunctions" type="array" value="eval=>null,exec=>null"/>
-      </properties>
-    </rule>
-    <rule ref="Squiz.PHP.ForbiddenFunctions">
-      <properties>
-        <property name="forbiddenFunctions" type="array" value="curl_init=>null,error_log=>null,print_r=>null,var_dump=>null,dump=>null,die=>null"/>
-      </properties>
-    </rule>
-    <rule ref="PEAR.Commenting.InlineComment.WrongStyle">
-      <severity>3</severity>
-    </rule>
-    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols"> 
-      <exclude-pattern>*/console/*</exclude-pattern>
-      <exclude-pattern>definitions.php</exclude-pattern>
-    </rule>
-    <exclude-pattern>index(-test)?.php</exclude-pattern>
-    <exclude-pattern>*/tests/codeception/*</exclude-pattern>
+  <exclude-pattern>index(-test)?.php</exclude-pattern>
+  <exclude-pattern>*/tests/codeception/*</exclude-pattern>
+  <exclude-pattern>*/slice/*</exclude-pattern>
+
+  <rule ref="Yii2">
+    <exclude name="Yii2.Properties.PrivatePropertiesUnderscore"/>
     <exclude-pattern>*/views/*</exclude-pattern>
-    <exclude-pattern>*/slice/*</exclude-pattern>
+  </rule>
+
+  <rule ref="Squiz.PHP.CommentedOutCode">
+    <properties>
+      <property name="maxPercentage" value="75"/>
+    </properties>
+    <exclude-pattern>*/views/*</exclude-pattern>
+  </rule>
+
+  <rule ref="Squiz.PHP.DiscouragedFunctions">
+    <properties>
+      <property name="forbiddenFunctions" type="array" value="eval=>null,exec=>null"/>
+    </properties>
+    <exclude-pattern>*/views/*</exclude-pattern>
+  </rule>
+
+  <rule ref="Squiz.PHP.ForbiddenFunctions">
+    <properties>
+      <property name="forbiddenFunctions" type="array" value="curl_init=>null,error_log=>null,print_r=>null,var_dump=>null,dump=>null,die=>null"/>
+    </properties>
+    <exclude-pattern>*/views/*</exclude-pattern>
+  </rule>
+
+  <rule ref="PEAR.Commenting.InlineComment.WrongStyle">
+    <severity>3</severity>
+    <exclude-pattern>*/views/*</exclude-pattern>
+  </rule>
+
+  <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+    <exclude-pattern>*/console/*</exclude-pattern>
+    <exclude-pattern>definitions.php</exclude-pattern>
+    <exclude-pattern>*/views/*</exclude-pattern>
+  </rule>
+
 </ruleset>
