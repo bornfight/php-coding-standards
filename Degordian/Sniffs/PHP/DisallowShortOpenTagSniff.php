@@ -23,11 +23,8 @@ class DisallowShortOpenTagSniff implements Sniff
     {
         $targets = array(
             T_OPEN_TAG,
+            T_INLINE_HTML
         );
-        $shortOpenTags = (boolean) ini_get('short_open_tag');
-        if ($shortOpenTags === false) {
-            $targets[] = T_INLINE_HTML;
-        }
         return $targets;
     }
 
