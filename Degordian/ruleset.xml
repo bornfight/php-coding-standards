@@ -22,14 +22,12 @@
     <properties>
       <property name="forbiddenFunctions" type="array" value="eval=>null,exec=>null"/>
     </properties>
-    <exclude-pattern>*/views/*</exclude-pattern>
   </rule>
 
   <rule ref="Squiz.PHP.ForbiddenFunctions">
     <properties>
       <property name="forbiddenFunctions" type="array" value="curl_init=>null,error_log=>null,print_r=>null,var_dump=>null,dump=>null,die=>null"/>
     </properties>
-    <exclude-pattern>*/views/*</exclude-pattern>
   </rule>
 
   <rule ref="PEAR.Commenting.InlineComment.WrongStyle">
