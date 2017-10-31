@@ -1,3 +1,4 @@
-# Here we will place all core PHP style guides that apply to all projects in general
+# This list provides the very basic standards for writing code
 
-## All code must be comply with [Clean Code Standards](https://github.com/jupeter/clean-code-php)
+* All code SHOULD always be [Clean Code](https://github.com/jupeter/clean-code-php). You MAY make exception in time of great need, but always remember to pay your (intellectual) debts
+* (Work in progress)
