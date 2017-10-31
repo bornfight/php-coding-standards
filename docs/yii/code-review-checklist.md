@@ -260,7 +260,7 @@ Instead of writing a lot of database login right in to your model, you can extra
 Not only does this help separate class concerns, with eases maintance - it also allows for fancy code reusing with condition chaining.
 
 Bad:
-```
+```php
 //SomeController.php
 
 public function actionIndex()
