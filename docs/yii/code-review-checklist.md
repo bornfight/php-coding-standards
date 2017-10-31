@@ -45,7 +45,7 @@ class SomeViewModel extends yii\base\Model {
     }
 
     public function getFooModels() {
-        return $this->fooModel;
+        return $this->fooModels;
     }
 
     public function getBarModels() {
