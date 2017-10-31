@@ -180,7 +180,7 @@ Code that does nothing just adds to clutter and confusion.
 * Delete unused variables/functions
 
 Bad:
-```
+```php
 class FooObject extends \yii\base\Object
 {
     private $foo;
