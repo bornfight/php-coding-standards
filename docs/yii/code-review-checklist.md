@@ -102,3 +102,73 @@ public function actionIndex()
     $foo->doStuff();
 }
 ```
+
+## Avoid direct access to $_GET, $_POST, $_REQUEST, $_SERVER, $_SESSION, $_COOKIE
+Yii2 has a wrapper for almost every array named on the list. It is clearer to read, less error prone and easier to test.
+
+Bad:
+```php
+//SomeController.php
+public function actionIndex()
+{
+    $foo = $_GET['foo'];
+    $bar = isset($_POST['bar']) ?? 'defaultValue';
+    $baz = $_REQUEST['baz'];
+
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $cookies = $_COOKIE;
+    $sessions = $_SESSION;
+}
+```
+
+Good:
+```php
+//SomeController.php
+public function actionIndex()
+{
+    $foo = Yii::$app->request->get('foo');
+    $bar = Yii::$app->request->post('bar', 'defaultValue');
+    $baz = Yii::$app->request->get('baz', Yii::$app->request->post('baz')); //Is there a better way?
+
+    $ip = Yii::$app->request->getUserIP();
+    $c1 = Yii::$app->request->cookies->get('c1');
+    $s1 = Yii::$app->session->get('s1');
+
+}
+```
+
+## Use ::class instead of writing the FQN in a string
+Writing the class as a string makes it tricky when refactoring the class name. You need to rely on your IDE detecting the class name in a string and replacing it accordingly. When using `::class` this makes it much clearer to the IDE when refactoring that this name should also be changed. Also this way you cannot have typos when writing the class FQN.
+
+Bad:
+```php
+//SomeController.php
+public function actionIndex()
+{
+    $dataProvider = new ArrayDataProvider([
+        'modelClass' => '\app\models\FooModel'
+    ]);
+}
+```
+
+Good:
+```php
+//SomeController.php
+public function actionIndex()
+{
+    $dataProvider = new ArrayDataProvider([
+        'modelClass' => \app\models\FooModel::class
+    ]);
+}
+
+```
+
+You may use either the FQN `\app\models\FooModel`, or import the namespace with `use` declaration and just referencing `FooModel`. Sometimes it is recommended to put the FQN when the package name is important. 
+
+For example:
+```php
+$dataProvider = new ArrayDataProvider([
+    'modelClass' => ActiveRecord::class
+]);
+```
+Is this ActiveRecord `\yii\db\ActiveRecord` or `\yii\mongodb\ActiveRecord`? It is hard to tell until we inspect the `use` declarations. If we know for confidence that we never use `\yii\mongodb\ActiveRecord` we can omit the FQN
