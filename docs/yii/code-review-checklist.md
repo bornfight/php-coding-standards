@@ -73,7 +73,7 @@ class SomeViewModel extends yii\base\Model
 This rule is being discussed on [Yii2 GitHub](https://github.com/yiisoft/yii2/issues/13922). Currently, request and response objects are globals and can be accessed from anywhere. But this is a violation of encapsulation, only controllers should handle these things. Models should never read from these global objects, their values should always be passed from the controller to the model.
 
 Bad:
-```
+```php
 //SomeController.php
 public function actionIndex()
 {
@@ -93,7 +93,7 @@ class FooModel extends yii\db\ActiveRecord
 ```
 
 Good:
-```
+```php
 //SomeController.php
 public function actionIndex()
 {
