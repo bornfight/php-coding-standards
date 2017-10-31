@@ -266,11 +266,13 @@ Bad:
 public function actionIndex()
 {
     $query1 = FooModel::find()->where([
-        'foo' => 'bar',
+        'color' => 'red',
         'active' => true,
         'userId' => User::find()->where(['fk_id' => 10]),
         ['<>', 'status', 5]
     ]);
+  
+    $query2 = FooModel::getComplex('red', true, 10, 5);
 }
 ```
 
@@ -284,7 +286,7 @@ class SomeController
 {
     public function actionIndex()
     {
-        $query = FooModel::foo('bar')->active()->userIdIn(10)->statusIsNot(5);
+        $query = FooModel::find()->color('red')->active()->userIdIn(10)->statusIsNot(5);
     }
 }
 
