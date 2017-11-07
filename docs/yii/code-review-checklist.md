@@ -144,7 +144,7 @@ Bad:
 //SomeController.php
 public function actionIndex()
 {
-    $foo = (int)Yii::$app->request->get('foo');
+    $foo = Yii::$app->request->get('foo');
 
     if($foo === null) {
         throw new yii\web\BadRequestHttpException('Parameter $foo is required.');
@@ -152,7 +152,7 @@ public function actionIndex()
     
     $bar = (int)Yii::$app->request->get('bar', 10);
     
-    $foo += $bar;
+    $foo = (int)$foo + $bar;
 }
 ```
 
