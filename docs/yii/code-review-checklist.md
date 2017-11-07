@@ -144,13 +144,13 @@ Bad:
 //SomeController.php
 public function actionIndex()
 {
-    $foo = Yii::$app->request->get('foo');
+    $foo = (int)Yii::$app->request->get('foo');
 
     if($foo === null) {
         throw new yii\web\BadRequestHttpException('Parameter $foo is required.');
     }
     
-    $bar = Yii::$app->request->get('bar', 10);
+    $bar = (int)Yii::$app->request->get('bar', 10);
     
     $foo += $bar;
 }
@@ -159,7 +159,7 @@ public function actionIndex()
 Good:
 ```php
 //SomeController.php
-public function actionIndex($foo, $bar = 10)
+public function actionIndex(int $foo, int $bar = 10)
 {
     $foo += $bar;
 }
