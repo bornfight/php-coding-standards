@@ -159,7 +159,7 @@ public function actionIndex()
 Good:
 ```php
 //SomeController.php
-public function actionIndex(int $foo, int $bar = 10)
+public function actionIndex(int $foo,int $bar = 10)
 {
     $foo += $bar;
 }
