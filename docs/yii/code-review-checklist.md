@@ -136,6 +136,34 @@ public function actionIndex()
 
 }
 ```
+## Use action parameters
+Action method can take parameters like any other method. The value of each action parameter is retrieved from $_GET using the parameter name as the key. If a required parameter is missing or the types do not match, yii\web\BadRequestHttpException exception will be thrown. This helps keeping your code cleaner and you get to do less typing.
+
+Bad:
+```php
+//SomeController.php
+public function actionIndex()
+{
+    $foo = Yii::$app->request->get('foo');
+
+    if($foo === null) {
+        throw new yii\web\BadRequestHttpException('Parameter $foo is required.');
+    }
+    
+    $bar = Yii::$app->request->get('bar', 10);
+    
+    $foo += $bar;
+}
+```
+
+Good:
+```php
+//SomeController.php
+public function actionIndex($foo, $bar = 10)
+{
+    $foo += $bar;
+}
+```
 
 ## Use ::class instead of writing the FQN in a string
 Writing the class as a string makes it tricky when refactoring the class name. You need to rely on your IDE detecting the class name in a string and replacing it accordingly. When using `::class` this makes it much clearer to the IDE when refactoring that this name should also be changed. Also this way you cannot have typos when writing the class FQN.
