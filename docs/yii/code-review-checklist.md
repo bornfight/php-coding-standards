@@ -150,16 +150,16 @@ public function actionIndex()
         throw new yii\web\BadRequestHttpException('Parameter $foo is required.');
     }
     
-    $bar = Yii::$app->request->get('bar', 10);
+    $bar = (int)Yii::$app->request->get('bar', 10);
     
-    $foo += $bar;
+    $foo = (int)$foo + $bar;
 }
 ```
 
 Good:
 ```php
 //SomeController.php
-public function actionIndex($foo, $bar = 10)
+public function actionIndex(int $foo,int $bar = 10)
 {
     $foo += $bar;
 }
