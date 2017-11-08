@@ -4,3 +4,4 @@
 * (Work in progress)
 * These rules apply to all projects regardless of technology or scope
 * Technology-specific rules are located in folders
+* Cool read for clean code - http://williamdurand.fr/2013/06/03/object-calisthenics/
