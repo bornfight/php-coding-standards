@@ -388,20 +388,7 @@ function fooBar($value)
         throw new Exception('Not ok');
     }
     
-    return true:;
-}
-
-OR
-
-function fooBar($value) 
-{
-    if ($value === null) 
-        throw new Exception('Is null');
-    
-    if ($value !== 'ok') 
-        throw new Exception('Not ok');
-    
-    return true:;
+    return true;
 }
 ```
 
