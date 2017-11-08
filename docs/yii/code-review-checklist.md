@@ -358,3 +358,93 @@ class FooQuery extends \yii\db\ActiveQuery
     }
 }
 ```
+## Reduce nesting, keep conditional blocks short, check for errors as they occur
+Reduce nesting - Keep your code straight, if your code goes too much to the right that means something is wrong
+
+Bad
+```php
+function fooBar($value) 
+{
+    if ($value !== null) {
+        if ($value === 'ok') {
+            return true;
+        } else {
+            throw new Exception('Not ok');
+        } 
+    } else {
+        throw new Exception('Is null');
+    }
+}
+```
+Good
+```php
+function fooBar($value) 
+{
+    if ($value === null) {
+        throw new Exception('Is null');
+    }
+    
+    if ($value !== 'ok') {
+        throw new Exception('Not ok');
+    }
+    
+    return true:;
+}
+
+OR
+
+function fooBar($value) 
+{
+    if ($value === null) 
+        throw new Exception('Is null');
+    
+    if ($value !== 'ok') 
+        throw new Exception('Not ok');
+    
+    return true:;
+}
+```
+
+## Return as soon as the result is ready
+If your function returns a value, return it as soon as it is ready, it doesn't need to be returned at the end of the function
+
+Bad
+```php
+function fooBar() 
+{
+    $data = getData();
+    
+    if ($data) {
+        if($data.doSomething()) {
+            $result = true;
+        } else {
+            $result = false;
+        }
+    } else {
+        $result = false;
+    }
+    
+    return $result;
+}
+```
+Good
+```php
+function fooBar() 
+{
+    $data = getData();
+    
+    if (!$data) {
+        return false;
+    }
+    
+    if (!data.doSomething()) {
+        return false;
+    }
+    
+    return true;
+}
+```
+
+
+
+
