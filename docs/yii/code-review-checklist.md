@@ -432,6 +432,33 @@ function fooBar()
 }
 ```
 
+## Use yii\helpers\Json for json_encode/json_decode
 
+This helper class provides a bit better implementation for handling json strings or objects and also supports throwing and catching exceptions
 
+Bad:
+```php
+class FooController extends yii\web\Controller
+{
+    public function actionIndex()
+    {
+        $string = $this->getJsonString();
+        $object = json_decode($string);
+        $original = json_encode($object);
+    }
+}
+```
+
+Good:
+```php
+class FooController extends yii\web\Controller
+{
+    public function actionIndex()
+    {
+        $string = $this->getJsonString();
+        $object = yii\helpers\Json::decode($string);
+        $original = yii\helpers\Json::encode($object);
+    }
+}
+```
 
