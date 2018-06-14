@@ -8,7 +8,7 @@ Create a sym link in web folder to allow access to static.
 
 Since browserSync is starting this on local machine and exposing it over wifi, http://www.static.loc is not available.
 
-```
+```php
 <?php
 return [
 	'components' => [
