@@ -24,7 +24,7 @@
     </properties>
   </rule>
 
-  <rule ref="Squiz.PHP.ForbiddenFunctions">
+  <rule ref="Generic.PHP.ForbiddenFunctions">
     <properties>
       <property name="forbiddenFunctions" type="array" value="curl_init=>null,error_log=>null,print_r=>null,var_dump=>null,dump=>null,die=>null"/>
     </properties>
