@@ -41,4 +41,11 @@
     <exclude-pattern>*/views/*</exclude-pattern>
   </rule>
 
+  <rule ref="Squiz.PHP.ForbiddenFunctions">
+    <include-pattern>*Controller.php</include-pattern>
+    <properties>
+      <property name="forbiddenFunctions" type="array" value="echo=>use $this->renderContent() without layout or use partial views"/>
+    </properties>
+  </rule>
+
 </ruleset>
