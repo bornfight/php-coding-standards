@@ -1,2 +1,2 @@
 # php-coding-standards
-Degordian php coding standard
+Bornfight php coding standard
